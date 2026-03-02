@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Antônia de Andrade | Arquiteta</title>
+  <meta name="description" content="Maria Antônia de Andrade - Graduanda em Arquitetura e Urbanismo. Projetos, sustentabilidade e transformação através da arquitetura." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Source Sans 3', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            'warm-dark': '#1f1b18',
+            'warm-cream': '#f5f0e8',
+            'terracotta': { DEFAULT: '#a0522d', light: '#c0785c' },
+            'sage': { DEFAULT: '#4a6b5a', light: '#7a9a8a' },
+            'gold': '#c4943a',
+            'card-bg': '#ebe5da',
+            'muted-text': '#7a7068',
+            'border-c': '#d4cbbf',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', system-ui, sans-serif; background: #f5f0e8; color: #2a2420; font-feature-settings: "kern" 1; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #ebe5da; }
+    ::-webkit-scrollbar-thumb { background: rgba(160,82,45,0.4); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(160,82,45,0.6); }
+    /* Animations */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes slideLeft { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes slideRight { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+    .anim-fade-up { opacity:0; animation: fadeUp 0.8s ease-out forwards; }
+    .anim-fade-in { opacity:0; animation: fadeIn 1s ease-out forwards; }
+    .anim-slide-left { opacity:0; animation: slideLeft 0.6s ease-out forwards; }
+    .anim-slide-right { opacity:0; animation: slideRight 0.6s ease-out forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    .delay-6 { animation-delay: 0.6s; }
+    .delay-7 { animation-delay: 0.7s; }
+    .delay-8 { animation-delay: 0.8s; }
+    .delay-9 { animation-delay: 0.9s; }
+    .delay-10 { animation-delay: 1.0s; }
+    .delay-12 { animation-delay: 1.2s; }
+    .delay-15 { animation-delay: 1.5s; }
+    .delay-18 { animation-delay: 1.8s; }
+    /* Scroll-triggered animations */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    /* Section dividers */
+    .section-wave { width: 100%; height: 48px; line-height: 0; display: block; }
+    .section-wave svg { width: 100%; height: 100%; }
+    .section-divider { padding: 2rem 0; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+    .section-divider::before,
+    .section-divider::after { content: ''; flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, transparent, #d4cbbf 20%, #d4cbbf 80%, transparent); }
+    .section-divider-dot { width: 6px; height: 6px; border-radius: 50%; background: #a0522d; }
+    .section-divider-line { flex: 1; max-width: 80px; height: 1px; background: #d4cbbf; }
+    .section-edge-soft { position: relative; }
+    .section-edge-soft::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, rgba(212,203,191,0.6) 15%, rgba(212,203,191,0.8) 50%, rgba(212,203,191,0.6) 85%, transparent 100%); pointer-events: none; }
+    .section-edge-soft-dark::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06) 50%, transparent); }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
+      <a href="#" class="font-display text-xl lg:text-2xl font-semibold tracking-wide" style="color:#2a2420;">
+        M<span class="text-terracotta">.</span>A
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#sobre" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Sobre</a>
+        <a href="#experiencia" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Experiência</a>
+        <a href="#formacao" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Formação</a>
+        <a href="#premios" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Prêmios</a>
+        <a href="#portfolio" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Portfólio</a>
+        <a href="#contato" class="font-body text-sm font-light text-muted-text hover:text-terracotta transition-colors duration-300 tracking-widest uppercase">Contato</a>
+      </div>
+      <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="lg:hidden" aria-label="Abrir menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-warm-dark/95 backdrop-blur-lg flex flex-col items-center justify-center">
+    <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-5 right-6 text-warm-cream" aria-label="Fechar menu">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <nav class="flex flex-col items-center gap-6">
+      <a href="#sobre" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Sobre</a>
+      <a href="#experiencia" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Experiência</a>
+      <a href="#formacao" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Formação</a>
+      <a href="#premios" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Prêmios</a>
+      <a href="#portfolio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Portfólio</a>
+      <a href="#contato" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="font-display text-3xl text-warm-cream hover:text-terracotta transition-colors">Contato</a>
+    </nav>
+  </div>
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80" alt="Arquitetura moderna" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style="background: linear-gradient(to top, #1f1b18 0%, rgba(31,27,24,0.6) 50%, rgba(31,27,24,0.2) 100%);"></div>
+    </div>
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-16 lg:pb-24">
+      <p class="anim-slide-left delay-3 font-body text-xs lg:text-sm tracking-[0.3em] uppercase text-terracotta-light mb-4">
+        Arquitetura e Urbanismo
+      </p>
+      <h1 class="anim-fade-up delay-5 font-display text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-light text-warm-cream leading-[0.9] mb-6">
+        Maria<br>Antônia<span class="text-terracotta">.</span>
+      </h1>
+      <p class="anim-fade-in delay-9 font-body text-sm lg:text-base text-warm-cream/70 max-w-lg font-light leading-relaxed mb-8">
+        Graduanda em Arquitetura e Urbanismo pela UniRuy Wyden · Técnica em Edificações · Salvador, Bahia
+      </p>
+      <div class="anim-fade-in delay-12 flex items-center gap-6">
+        <a href="#portfolio" class="font-body text-sm tracking-wider uppercase border border-terracotta text-terracotta px-8 py-3 hover:bg-terracotta hover:text-warm-cream transition-all duration-300">
+          Ver portfólio
+        </a>
+        <a href="#contato" class="font-body text-sm tracking-wider uppercase text-warm-cream/60 hover:text-warm-cream transition-colors duration-300">
+          Contato →
+        </a>
+      </div>
+      <div class="anim-fade-in delay-18 absolute bottom-8 right-6 lg:right-12">
+        <a href="#sobre" class="text-warm-cream/40 hover:text-terracotta transition-colors">
+          <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Wave: Hero → Sobre -->
+  <div class="section-wave bg-warm-cream" aria-hidden="true">
+    <svg viewBox="0 0 1440 52" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 52h1440V28c-240 16-480 16-720 0S240 0 0 28v24z" fill="#f5f0e8"/>
+      <path d="M0 52h1440V34c-200 10-400 10-720 0S200 14 0 34v18z" fill="#ebe5da" opacity="0.5"/>
+    </svg>
+  </div>
+  <!-- SOBRE -->
+  <section id="sobre" class="section-edge-soft py-24 lg:py-32 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div class="lg:col-span-4 reveal flex flex-col">
+          <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta mb-3">01</p>
+          <h2 class="font-display text-4xl lg:text-5xl font-light">Sobre</h2>
+          <div class="w-12 h-[1px] bg-terracotta mt-4 mb-6 lg:mb-10"></div>
+          <div class="reveal-left mt-2" style="transition-delay:0.15s;">
+            <img src="assets/antonia-pfp.jpg" alt="Maria Antônia de Andrade" class="w-48 h-48 sm:w-56 sm:h-56 lg:w-full lg:max-w-[280px] rounded-xl object-cover shadow-xl ring-1 ring-black/5" />
+          </div>
+        </div>
+        <div class="lg:col-span-8 reveal" style="transition-delay:0.2s;">
+          <blockquote class="font-display text-xl lg:text-2xl italic opacity-80 leading-relaxed mb-8 border-l-2 border-terracotta pl-6">
+            "Vejo a arquitetura como um agente formador da sociedade — o instrumento de transformação que traduz em volumes construtivos a verdade dos indivíduos que os exploram."
+          </blockquote>
+          <div class="space-y-4 mb-10">
+            <p class="font-body text-sm lg:text-base text-muted-text font-light leading-relaxed">
+              Atuo como assistente na área de Arquitetura e Urbanismo, com mais de dois anos de experiência. Desenvolvo elaboração e análise de projetos arquitetônicos e da Construção Civil, utilizando AutoCAD e Archicad para compatibilização e qualidade técnica.
+            </p>
+            <p class="font-body text-sm lg:text-base text-muted-text font-light leading-relaxed">
+              Também realizo levantamentos para orçamentos de obras, com planilhas detalhadas e memoriais descritivos para gestão eficiente de custos e recursos. Minha atuação está ligada ao compromisso com bem-estar, dinamicidade e sustentabilidade.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="reveal font-body text-xs tracking-wider uppercase px-4 py-2 border border-border-c text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300" style="transition-delay:0.4s;">AutoCAD</span>
+            <span class="reveal font-body text-xs tracking-wider uppercase px-4 py-2 border border-border-c text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300" style="transition-delay:0.5s;">Archicad</span>
+            <span class="reveal font-body text-xs tracking-wider uppercase px-4 py-2 border border-border-c text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300" style="transition-delay:0.6s;">Orçamento de obras</span>
+            <span class="reveal font-body text-xs tracking-wider uppercase px-4 py-2 border border-border-c text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300" style="transition-delay:0.7s;">Sustentabilidade</span>
+            <span class="reveal font-body text-xs tracking-wider uppercase px-4 py-2 border border-border-c text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300" style="transition-delay:0.8s;">Planilhas e memoriais</span>
+          </div>
+          <div class="reveal mt-10 flex flex-wrap gap-4" style="transition-delay:0.9s;">
+            <a href="https://www.linkedin.com/in/maria-ant%C3%B4nia-de-andrade-70300014a/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 border border-border-c px-5 py-3 text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300">
+              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span class="font-body text-sm tracking-wider uppercase">LinkedIn</span>
+              <span class="text-muted-text/50 group-hover:text-terracotta transition-colors">→</span>
+            </a>
+            <a href="https://instagram.com/arq.antoniandrade" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 border border-border-c px-5 py-3 text-muted-text hover:border-terracotta hover:text-terracotta transition-colors duration-300">
+              <svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <span class="font-body text-sm tracking-wider uppercase">Instagram</span>
+              <span class="text-muted-text/50 group-hover:text-terracotta transition-colors">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider: Sobre → Experiência -->
+  <div class="bg-card-bg py-6">
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia" class="section-edge-soft py-24 lg:py-32 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div class="lg:col-span-4 reveal">
+          <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta mb-3">02</p>
+          <h2 class="font-display text-4xl lg:text-5xl font-light">Experiência</h2>
+          <div class="w-12 h-[1px] bg-terracotta mt-4"></div>
+        </div>
+        <div class="lg:col-span-8">
+          <div class="reveal-right group border-b border-border-c py-8" style="transition-delay:0.2s;">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8">
+              <div class="sm:w-48 shrink-0">
+                <p class="font-body text-xs tracking-wider text-muted-text uppercase">ago 2025 — Atual</p>
+                <span class="inline-block mt-1 font-body text-[10px] tracking-widest uppercase text-terracotta border border-terracotta px-2 py-0.5">Atual</span>
+              </div>
+              <div>
+                <h3 class="font-display text-lg lg:text-xl group-hover:text-terracotta transition-colors duration-300">Estagiária de Arquitetura e Urbanismo · Sustentabilidade</h3>
+                <p class="font-body text-sm text-muted-text mt-1">Ares - Eficiência Energética e Sustentabilidade · Belo Horizonte, MG</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right group border-b border-border-c py-8" style="transition-delay:0.35s;">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8">
+              <div class="sm:w-48 shrink-0">
+                <p class="font-body text-xs tracking-wider text-muted-text uppercase">ago 2024 — ago 2025</p>
+              </div>
+              <div>
+                <h3 class="font-display text-lg lg:text-xl group-hover:text-terracotta transition-colors duration-300">Estagiária de Arquitetura e Urbanismo · Hospitalar</h3>
+                <p class="font-body text-sm text-muted-text mt-1">Santa Casa da Bahia · Salvador, BA</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right group border-b border-border-c py-8" style="transition-delay:0.5s;">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8">
+              <div class="sm:w-48 shrink-0">
+                <p class="font-body text-xs tracking-wider text-muted-text uppercase">mai 2024 — abr 2025</p>
+              </div>
+              <div>
+                <h3 class="font-display text-lg lg:text-xl group-hover:text-terracotta transition-colors duration-300">Estagiária · Projetos luminotécnicos</h3>
+                <p class="font-body text-sm text-muted-text mt-1">VENTANA · Salvador, BA</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right group py-8" style="transition-delay:0.65s;">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8">
+              <div class="sm:w-48 shrink-0">
+                <p class="font-body text-xs tracking-wider text-muted-text uppercase">out 2022 — mai 2024</p>
+              </div>
+              <div>
+                <h3 class="font-display text-lg lg:text-xl group-hover:text-terracotta transition-colors duration-300">Estagiária Técnica em Edificações · Orçamento e Planejamento</h3>
+                <p class="font-body text-sm text-muted-text mt-1">Construtora AS Nordeste · Salvador, BA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider: Experiência → Formação -->
+  <div class="bg-warm-cream py-6">
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+  <!-- FORMAÇÃO -->
+  <section id="formacao" class="section-edge-soft py-24 lg:py-32 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div class="lg:col-span-4 reveal">
+          <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta mb-3">03</p>
+          <h2 class="font-display text-4xl lg:text-5xl font-light">Formação</h2>
+          <div class="w-12 h-[1px] bg-terracotta mt-4"></div>
+        </div>
+        <div class="lg:col-span-8 space-y-8">
+          <div class="reveal flex flex-col sm:flex-row gap-4 sm:gap-8" style="transition-delay:0.2s;">
+            <p class="font-body text-xs tracking-wider text-terracotta uppercase sm:w-36 shrink-0 pt-1">2022 — 2027</p>
+            <div>
+              <h3 class="font-display text-xl">Bacharelado em Arquitetura e Urbanismo</h3>
+              <p class="font-body text-sm text-muted-text mt-1">UniRuy Wyden · Salvador, BA</p>
+            </div>
+          </div>
+          <div class="reveal flex flex-col sm:flex-row gap-4 sm:gap-8" style="transition-delay:0.35s;">
+            <p class="font-body text-xs tracking-wider text-terracotta uppercase sm:w-36 shrink-0 pt-1">2021 — 2023</p>
+            <div>
+              <h3 class="font-display text-xl">Técnico em Edificações</h3>
+              <p class="font-body text-sm text-muted-text mt-1">SENAI CIMATEC · Salvador, BA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider: Formação → Prêmios -->
+  <div class="bg-card-bg py-6">
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+  <!-- PRÊMIOS -->
+  <section id="premios" class="section-edge-soft py-24 lg:py-32 bg-card-bg">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div class="lg:col-span-4 reveal">
+          <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta mb-3">04</p>
+          <h2 class="font-display text-4xl lg:text-5xl font-light">Prêmios</h2>
+          <div class="w-12 h-[1px] bg-terracotta mt-4"></div>
+        </div>
+        <div class="lg:col-span-8 space-y-6">
+          <div class="reveal-right group border-l-2 border-border-c hover:border-terracotta pl-6 py-2 transition-colors duration-300" style="transition-delay:0.3s;">
+            <p class="font-body text-xs tracking-wider uppercase text-terracotta mb-1">FETECMS · 2021</p>
+            <p class="font-body text-sm opacity-80 font-light">II lugar — Maratona de Inovação da Feira de Tecnologias, Engenharias e Ciências de Mato Grosso do Sul</p>
+          </div>
+          <div class="reveal-right group border-l-2 border-border-c hover:border-terracotta pl-6 py-2 transition-colors duration-300" style="transition-delay:0.42s;">
+            <p class="font-body text-xs tracking-wider uppercase text-terracotta mb-1">SENAI · 2021</p>
+            <p class="font-body text-sm opacity-80 font-light">III lugar — GRAND PRIX SENAI DE INOVAÇÃO - Educação (Cluster Google)</p>
+          </div>
+          <div class="reveal-right group border-l-2 border-border-c hover:border-terracotta pl-6 py-2 transition-colors duration-300" style="transition-delay:0.54s;">
+            <p class="font-body text-xs tracking-wider uppercase text-terracotta mb-1">FBJC · 2021</p>
+            <p class="font-body text-sm opacity-80 font-light">III Lugar — Trilha SOS Mata Atlântica (Ambiental) - Maratona de Inovação FBJC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Divider: Prêmios → Portfólio -->
+  <div class="bg-warm-cream py-6">
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-dot"></span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="section-edge-soft py-24 lg:py-32 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="reveal mb-16">
+        <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta mb-3">05</p>
+        <h2 class="font-display text-4xl lg:text-5xl font-light">Portfólio</h2>
+        <div class="w-12 h-[1px] bg-terracotta mt-4 mb-4"></div>
+        <p class="font-body text-sm text-muted-text font-light max-w-lg">
+          Seleção de projetos e trabalhos em arquitetura, urbanismo e sustentabilidade.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="reveal group relative aspect-[3/4] bg-card-bg border border-border-c overflow-hidden cursor-pointer" style="transition-delay:0.3s;">
+          <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/80 via-warm-dark/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="absolute top-4 left-4">
+            <span class="font-body text-[10px] tracking-widest uppercase text-terracotta border border-terracotta px-3 py-1">Projeto em destaque</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="font-display text-2xl text-warm-cream mb-1">Projeto 1</h3>
+            <p class="font-body text-sm text-warm-cream/60 font-light">Breve descrição do projeto.</p>
+          </div>
+        </div>
+        <div class="reveal group relative aspect-[3/4] bg-card-bg border border-border-c overflow-hidden cursor-pointer" style="transition-delay:0.45s;">
+          <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/80 via-warm-dark/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="absolute top-4 left-4">
+            <span class="font-body text-[10px] tracking-widest uppercase text-terracotta border border-terracotta px-3 py-1">Projeto em destaque</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="font-display text-2xl text-warm-cream mb-1">Projeto 2</h3>
+            <p class="font-body text-sm text-warm-cream/60 font-light">Breve descrição do projeto.</p>
+          </div>
+        </div>
+        <div class="reveal group relative aspect-[3/4] bg-card-bg border border-border-c overflow-hidden cursor-pointer" style="transition-delay:0.6s;">
+          <div class="absolute inset-0 bg-gradient-to-t from-warm-dark/80 via-warm-dark/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+          <div class="absolute top-4 left-4">
+            <span class="font-body text-[10px] tracking-widest uppercase text-terracotta border border-terracotta px-3 py-1">Projeto em destaque</span>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+            <h3 class="font-display text-2xl text-warm-cream mb-1">Projeto 3</h3>
+            <p class="font-body text-sm text-warm-cream/60 font-light">Breve descrição do projeto.</p>
+          </div>
+        </div>
+      </div>
+      <p class="reveal mt-10 font-body text-sm text-muted-text font-light text-center" style="transition-delay:0.8s;">
+        Mais trabalhos em <a href="https://instagram.com/arq.antoniandrade" target="_blank" rel="noopener noreferrer" class="text-terracotta hover:underline">@arq.antoniandrade</a> no Instagram.
+      </p>
+    </div>
+  </section>
+  <!-- Wave: Portfólio → Contato -->
+  <div class="section-wave bg-warm-dark" aria-hidden="true">
+    <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 0v24c200 4 400 16 720 16 320 0 520-12 720-16v-8c-200 8-400 12-720 12S200 8 0 16V0z" fill="#1f1b18"/>
+      <path d="M0 0h1440v20c-240 8-480 4-720 4s-480 4-720-4V0z" fill="#2a2420" opacity="0.3"/>
+    </svg>
+  </div>
+  <!-- CONTATO -->
+  <section id="contato" class="section-edge-soft-dark py-24 lg:py-32 bg-warm-dark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div class="lg:col-span-6 reveal">
+          <p class="font-body text-xs tracking-[0.3em] uppercase text-terracotta-light mb-3">06</p>
+          <h2 class="font-display text-4xl lg:text-6xl font-light text-warm-cream leading-tight">
+            Vamos conversar<span class="text-terracotta">?</span>
+          </h2>
+          <p class="font-body text-sm text-warm-cream/50 font-light mt-4 max-w-sm leading-relaxed">
+            Entre em contato para projetos, colaborações ou conversas sobre arquitetura e urbanismo.
+          </p>
+        </div>
+        <div class="lg:col-span-6 flex flex-col justify-center gap-6 reveal" style="transition-delay:0.2s;">
+          <a href="https://www.linkedin.com/in/maria-ant%C3%B4nia-de-andrade-70300014a/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 border-b border-warm-cream/10 pb-6 hover:border-terracotta transition-colors duration-300">
+            <svg class="w-5 h-5 text-terracotta-light" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span class="font-body text-sm text-warm-cream/70 group-hover:text-warm-cream tracking-wider uppercase transition-colors">LinkedIn</span>
+            <span class="ml-auto text-warm-cream/30 group-hover:text-terracotta transition-colors">→</span>
+          </a>
+          <a href="https://instagram.com/arq.antoniandrade" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 border-b border-warm-cream/10 pb-6 hover:border-terracotta transition-colors duration-300">
+            <svg class="w-5 h-5 text-terracotta-light" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span class="font-body text-sm text-warm-cream/70 group-hover:text-warm-cream tracking-wider uppercase transition-colors">Instagram</span>
+            <span class="ml-auto text-warm-cream/30 group-hover:text-terracotta transition-colors">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="bg-warm-dark border-t border-white/5 py-8">
+    <p class="font-body text-xs text-warm-cream/30 tracking-wider text-center">
+      © 2025 Maria Antônia de Andrade · Arquitetura e Urbanismo
+    </p>
+  </footer>
+  <!-- SCRIPTS -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(245,240,232,0.9)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+      } else {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        nav.style.boxShadow = 'none';
+      }
+    });
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '-50px' });
+    document.querySelectorAll('.reveal, .reveal-right, .reveal-left').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
